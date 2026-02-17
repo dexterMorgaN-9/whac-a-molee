@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="whac-a-mole"
+run/main_scene="uid://cc0dx584dtshq"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 

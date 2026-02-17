@@ -1,3 +1,180 @@
-[gd_scene format=3 uid="uid://cc0dx584dtshq"]
+[gd_scene load_steps=3 format=3 uid="uid://cc0dx584dtshq"]
+
+[ext_resource type="Script" uid="uid://dad0380mhtl4x" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Background" type="Sprite2D" parent="."]
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[node name="BunnySpawnTimer" type="Timer" parent="."]
+
+[node name="HoleGrid" type="Node2D" parent="."]
+
+[node name="Hole1" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole1"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole1"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole1/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole1/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole1/BunnyArea"]
+
+[node name="Hole2" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole2"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole2"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole2/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole2/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole2/BunnyArea"]
+
+[node name="Hole3" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole3"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole3"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole3/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole3/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole3/BunnyArea"]
+
+[node name="Hole4" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole4"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole4"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole4/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole4/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole4/BunnyArea"]
+
+[node name="Hole5" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole5"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole5"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole5/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole5/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole5/BunnyArea"]
+
+[node name="Hole6" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole6"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole6"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole6/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole6/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole6/BunnyArea"]
+
+[node name="Hole7" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole7"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole7"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole7/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole7/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole7/BunnyArea"]
+
+[node name="Hole8" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole8"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole8"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole8/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole8/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole8/BunnyArea"]
+
+[node name="Hole9" type="Node2D" parent="HoleGrid"]
+
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole9"]
+
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole9"]
+
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole9/BunnyArea"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole9/BunnyArea"]
+shape = SubResource("RectangleShape2D_7dm0k")
+
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole9/BunnyArea"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="HighScoreLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TimerLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StreakLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GameOverPanel" type="Panel" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOverLabel" type="Label" parent="UI/GameOverPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FinalScoreLabel" type="Label" parent="UI/GameOverPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RestartButton" type="Button" parent="UI/GameOverPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
