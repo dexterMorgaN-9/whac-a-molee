@@ -1,180 +1,248 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc0dx584dtshq"]
+[gd_scene format=3 uid="uid://cc0dx584dtshq"]
 
 [ext_resource type="Script" uid="uid://dad0380mhtl4x" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://bfbewqu2kayxw" path="res://assets/backgroundColorGrass.png" id="2_0xm2m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
+radius = 78.0
 
-[node name="Main" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bvp3"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_272bh"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vw27"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kek77"]
+radius = 78.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4c57u"]
+radius = 78.0
+
+[node name="Main" type="Node2D" unique_id=2028784020]
 script = ExtResource("1_ig7tw")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1257766137]
+position = Vector2(644.00006, 186.00002)
+scale = Vector2(1.2675781, 1.0539551)
+texture = ExtResource("2_0xm2m")
+metadata/_edit_lock_ = true
 
-[node name="GameTimer" type="Timer" parent="."]
+[node name="GameTimer" type="Timer" parent="." unique_id=952682535]
+wait_time = 60.0
 
-[node name="BunnySpawnTimer" type="Timer" parent="."]
+[node name="BunnySpawnTimer" type="Timer" parent="." unique_id=1535914905]
 
-[node name="HoleGrid" type="Node2D" parent="."]
+[node name="HoleGrid" type="Node2D" parent="." unique_id=414982583]
 
-[node name="Hole1" type="Node2D" parent="HoleGrid"]
+[node name="Hole1" type="Node2D" parent="HoleGrid" unique_id=687327069]
+position = Vector2(96, 400)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole1"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole1" unique_id=1278347576]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole1"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole1" unique_id=210758734]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole1/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole1/BunnyArea" unique_id=1859848964]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole1/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole1/BunnyArea" unique_id=1837710958]
+shape = SubResource("CircleShape2D_0xm2m")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole1/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole1/BunnyArea" unique_id=1629283362]
 
-[node name="Hole2" type="Node2D" parent="HoleGrid"]
+[node name="Hole2" type="Node2D" parent="HoleGrid" unique_id=1837881055]
+position = Vector2(311, 454)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole2"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole2" unique_id=669965692]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole2"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole2" unique_id=993318900]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole2/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole2/BunnyArea" unique_id=1792452650]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole2/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole2/BunnyArea" unique_id=903670304]
+shape = SubResource("CircleShape2D_h2yge")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole2/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole2/BunnyArea" unique_id=1506915358]
 
-[node name="Hole3" type="Node2D" parent="HoleGrid"]
+[node name="Hole3" type="Node2D" parent="HoleGrid" unique_id=1192348462]
+position = Vector2(564, 443)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole3"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole3" unique_id=147817019]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole3"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole3" unique_id=2131384947]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole3/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole3/BunnyArea" unique_id=1103413028]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole3/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole3/BunnyArea" unique_id=1805183172]
+shape = SubResource("CircleShape2D_1bvp3")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole3/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole3/BunnyArea" unique_id=1449260950]
 
-[node name="Hole4" type="Node2D" parent="HoleGrid"]
+[node name="Hole4" type="Node2D" parent="HoleGrid" unique_id=165219417]
+position = Vector2(743, 575)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole4"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole4" unique_id=1806177351]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole4"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole4" unique_id=1559468135]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole4/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole4/BunnyArea" unique_id=849529681]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole4/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole4/BunnyArea" unique_id=1967763658]
+shape = SubResource("CircleShape2D_lquwl")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole4/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole4/BunnyArea" unique_id=2096106291]
 
-[node name="Hole5" type="Node2D" parent="HoleGrid"]
+[node name="Hole5" type="Node2D" parent="HoleGrid" unique_id=887745135]
+position = Vector2(96, 602)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole5"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole5" unique_id=849668462]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole5"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole5" unique_id=420109568]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole5/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole5/BunnyArea" unique_id=1342238070]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole5/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole5/BunnyArea" unique_id=1687836176]
+shape = SubResource("CircleShape2D_7mycd")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole5/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole5/BunnyArea" unique_id=212323093]
 
-[node name="Hole6" type="Node2D" parent="HoleGrid"]
+[node name="Hole6" type="Node2D" parent="HoleGrid" unique_id=628732993]
+position = Vector2(1145, 575)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole6"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole6" unique_id=45011530]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole6"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole6" unique_id=188308851]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole6/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole6/BunnyArea" unique_id=200460543]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole6/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole6/BunnyArea" unique_id=1177272876]
+shape = SubResource("CircleShape2D_272bh")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole6/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole6/BunnyArea" unique_id=39542346]
 
-[node name="Hole7" type="Node2D" parent="HoleGrid"]
+[node name="Hole7" type="Node2D" parent="HoleGrid" unique_id=1051805216]
+position = Vector2(979, 429)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole7"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole7" unique_id=727442892]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole7"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole7" unique_id=1869606034]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole7/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole7/BunnyArea" unique_id=217055421]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole7/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole7/BunnyArea" unique_id=479285082]
+shape = SubResource("CircleShape2D_5vw27")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole7/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole7/BunnyArea" unique_id=1119464662]
 
-[node name="Hole8" type="Node2D" parent="HoleGrid"]
+[node name="Hole8" type="Node2D" parent="HoleGrid" unique_id=1626138823]
+position = Vector2(383, 633)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole8"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole8" unique_id=947780921]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole8"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole8" unique_id=937428332]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole8/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole8/BunnyArea" unique_id=1830050788]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole8/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole8/BunnyArea" unique_id=1490875350]
+shape = SubResource("CircleShape2D_kek77")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole8/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole8/BunnyArea" unique_id=925180789]
 
-[node name="Hole9" type="Node2D" parent="HoleGrid"]
+[node name="Hole9" type="Node2D" parent="HoleGrid" unique_id=2129901176]
+position = Vector2(936, 625)
 
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole9"]
+[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole9" unique_id=1460262377]
 
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole9"]
+[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole9" unique_id=1612242708]
 
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole9/BunnyArea"]
+[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole9/BunnyArea" unique_id=1756619924]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole9/BunnyArea"]
-shape = SubResource("RectangleShape2D_7dm0k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole9/BunnyArea" unique_id=809949524]
+shape = SubResource("CircleShape2D_4c57u")
 
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole9/BunnyArea"]
+[node name="HideTimer" type="Timer" parent="HoleGrid/Hole9/BunnyArea" unique_id=279815356]
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=409467189]
 
-[node name="ScoreLabel" type="Label" parent="UI"]
-offset_right = 40.0
+[node name="ScoreLabel" type="Label" parent="UI" unique_id=42500572]
+offset_left = 8.0
+offset_right = 73.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "SCORE:0"
 
-[node name="HighScoreLabel" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="HighScoreLabel" type="Label" parent="UI" unique_id=402260506]
+offset_left = 8.0
+offset_top = 45.0
+offset_right = 109.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "High Score: 0"
 
-[node name="TimerLabel" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="TimerLabel" type="Label" parent="UI" unique_id=501638071]
+offset_left = 1109.0
+offset_right = 1239.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Time: 60"
 
-[node name="StreakLabel" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="StreakLabel" type="Label" parent="UI" unique_id=239727403]
+offset_left = 186.0
+offset_right = 346.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = " Streak: 0x"
 
-[node name="GameOverPanel" type="Panel" parent="UI"]
-offset_right = 40.0
+[node name="GameOverPanel" type="Panel" parent="UI" unique_id=354741695]
+offset_left = -84.0
+offset_right = -44.0
 offset_bottom = 40.0
 
-[node name="GameOverLabel" type="Label" parent="UI/GameOverPanel"]
+[node name="GameOverLabel" type="Label" parent="UI/GameOverPanel" unique_id=477190531]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="FinalScoreLabel" type="Label" parent="UI/GameOverPanel"]
+[node name="FinalScoreLabel" type="Label" parent="UI/GameOverPanel" unique_id=670191779]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="RestartButton" type="Button" parent="UI/GameOverPanel"]
+[node name="RestartButton" type="Button" parent="UI/GameOverPanel" unique_id=653042900]
 layout_mode = 0
-offset_right = 40.0
+offset_left = -70.0
+offset_right = -30.0
 offset_bottom = 40.0
 
-[node name="AudioPlayers" type="Node" parent="."]
+[node name="AudioPlayers" type="Node" parent="." unique_id=714521319]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=305262525]
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=643806348]
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=730804966]
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=779487784]

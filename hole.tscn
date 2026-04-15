@@ -1,19 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6qq2rv4r50sn"]
+[gd_scene format=3 uid="uid://b6qq2rv4r50sn"]
 
 [ext_resource type="Script" uid="uid://bapbd8i212boy" path="res://hole.gd" id="1_ln22a"]
+[ext_resource type="Texture2D" uid="uid://cw0rhx5vfei23" path="res://assets/BunnyIdleF.png" id="2_1s0jb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4igv2"]
+radius = 16.0
 
-[node name="Hole" type="Node2D"]
+[node name="Hole" type="Node2D" unique_id=488924429]
 script = ExtResource("1_ln22a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="HoleSprite" type="Sprite2D" parent="." unique_id=230626252]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="BunnyArea" type="Area2D" parent="." unique_id=966508216]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="BunnySprite" type="Sprite2D" parent="BunnyArea" unique_id=1722159661]
+texture = ExtResource("2_1s0jb")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunnyArea" unique_id=1003017088]
 shape = SubResource("CircleShape2D_4igv2")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="HideTimer" type="Timer" parent="." unique_id=360440091]
