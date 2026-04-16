@@ -2,33 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dad0380mhtl4x" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bfbewqu2kayxw" path="res://assets/backgroundColorGrass.png" id="2_0xm2m"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0xm2m"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_h2yge"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1bvp3"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_272bh"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_5vw27"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kek77"]
-radius = 78.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4c57u"]
-radius = 78.0
+[ext_resource type="PackedScene" uid="uid://b6qq2rv4r50sn" path="res://hole.tscn" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=2028784020]
 script = ExtResource("1_ig7tw")
@@ -43,143 +17,6 @@ metadata/_edit_lock_ = true
 wait_time = 60.0
 
 [node name="BunnySpawnTimer" type="Timer" parent="." unique_id=1535914905]
-
-[node name="HoleGrid" type="Node2D" parent="." unique_id=414982583]
-
-[node name="Hole1" type="Node2D" parent="HoleGrid" unique_id=687327069]
-position = Vector2(96, 400)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole1" unique_id=1278347576]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole1" unique_id=210758734]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole1/BunnyArea" unique_id=1859848964]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole1/BunnyArea" unique_id=1837710958]
-shape = SubResource("CircleShape2D_0xm2m")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole1/BunnyArea" unique_id=1629283362]
-
-[node name="Hole2" type="Node2D" parent="HoleGrid" unique_id=1837881055]
-position = Vector2(311, 454)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole2" unique_id=669965692]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole2" unique_id=993318900]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole2/BunnyArea" unique_id=1792452650]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole2/BunnyArea" unique_id=903670304]
-shape = SubResource("CircleShape2D_h2yge")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole2/BunnyArea" unique_id=1506915358]
-
-[node name="Hole3" type="Node2D" parent="HoleGrid" unique_id=1192348462]
-position = Vector2(564, 443)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole3" unique_id=147817019]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole3" unique_id=2131384947]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole3/BunnyArea" unique_id=1103413028]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole3/BunnyArea" unique_id=1805183172]
-shape = SubResource("CircleShape2D_1bvp3")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole3/BunnyArea" unique_id=1449260950]
-
-[node name="Hole4" type="Node2D" parent="HoleGrid" unique_id=165219417]
-position = Vector2(743, 575)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole4" unique_id=1806177351]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole4" unique_id=1559468135]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole4/BunnyArea" unique_id=849529681]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole4/BunnyArea" unique_id=1967763658]
-shape = SubResource("CircleShape2D_lquwl")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole4/BunnyArea" unique_id=2096106291]
-
-[node name="Hole5" type="Node2D" parent="HoleGrid" unique_id=887745135]
-position = Vector2(96, 602)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole5" unique_id=849668462]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole5" unique_id=420109568]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole5/BunnyArea" unique_id=1342238070]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole5/BunnyArea" unique_id=1687836176]
-shape = SubResource("CircleShape2D_7mycd")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole5/BunnyArea" unique_id=212323093]
-
-[node name="Hole6" type="Node2D" parent="HoleGrid" unique_id=628732993]
-position = Vector2(1145, 575)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole6" unique_id=45011530]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole6" unique_id=188308851]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole6/BunnyArea" unique_id=200460543]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole6/BunnyArea" unique_id=1177272876]
-shape = SubResource("CircleShape2D_272bh")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole6/BunnyArea" unique_id=39542346]
-
-[node name="Hole7" type="Node2D" parent="HoleGrid" unique_id=1051805216]
-position = Vector2(979, 429)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole7" unique_id=727442892]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole7" unique_id=1869606034]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole7/BunnyArea" unique_id=217055421]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole7/BunnyArea" unique_id=479285082]
-shape = SubResource("CircleShape2D_5vw27")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole7/BunnyArea" unique_id=1119464662]
-
-[node name="Hole8" type="Node2D" parent="HoleGrid" unique_id=1626138823]
-position = Vector2(383, 633)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole8" unique_id=947780921]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole8" unique_id=937428332]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole8/BunnyArea" unique_id=1830050788]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole8/BunnyArea" unique_id=1490875350]
-shape = SubResource("CircleShape2D_kek77")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole8/BunnyArea" unique_id=925180789]
-
-[node name="Hole9" type="Node2D" parent="HoleGrid" unique_id=2129901176]
-position = Vector2(936, 625)
-
-[node name="HoleSprite" type="Sprite2D" parent="HoleGrid/Hole9" unique_id=1460262377]
-
-[node name="BunnyArea" type="Area2D" parent="HoleGrid/Hole9" unique_id=1612242708]
-
-[node name="BunnySprite" type="Sprite2D" parent="HoleGrid/Hole9/BunnyArea" unique_id=1756619924]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HoleGrid/Hole9/BunnyArea" unique_id=809949524]
-shape = SubResource("CircleShape2D_4c57u")
-
-[node name="HideTimer" type="Timer" parent="HoleGrid/Hole9/BunnyArea" unique_id=279815356]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=409467189]
 
@@ -201,9 +38,10 @@ theme_override_font_sizes/font_size = 32
 text = "High Score: 0"
 
 [node name="TimerLabel" type="Label" parent="UI" unique_id=501638071]
-offset_left = 1109.0
-offset_right = 1239.0
-offset_bottom = 45.0
+offset_left = 1107.0
+offset_top = 10.0
+offset_right = 1237.0
+offset_bottom = 55.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Time: 60"
@@ -246,3 +84,41 @@ offset_bottom = 40.0
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=730804966]
 
 [node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=779487784]
+
+[node name="HoleGrid" type="Node2D" parent="." unique_id=1051887330]
+
+[node name="Hole1" parent="HoleGrid" unique_id=488924429 instance=ExtResource("3_h2yge")]
+position = Vector2(80, 400)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole2" parent="HoleGrid" unique_id=1223103978 instance=ExtResource("3_h2yge")]
+position = Vector2(325, 475)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole3" parent="HoleGrid" unique_id=743754597 instance=ExtResource("3_h2yge")]
+position = Vector2(546, 422.99997)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole4" parent="HoleGrid" unique_id=1585850293 instance=ExtResource("3_h2yge")]
+position = Vector2(554, 625)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole5" parent="HoleGrid" unique_id=1851334043 instance=ExtResource("3_h2yge")]
+position = Vector2(136, 608)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole6" parent="HoleGrid" unique_id=728782882 instance=ExtResource("3_h2yge")]
+position = Vector2(808.99994, 400)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole7" parent="HoleGrid" unique_id=1680332066 instance=ExtResource("3_h2yge")]
+position = Vector2(1194, 431.99997)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole8" parent="HoleGrid" unique_id=769356527 instance=ExtResource("3_h2yge")]
+position = Vector2(861, 625)
+scale = Vector2(4.7, 4.7)
+
+[node name="Hole9" parent="HoleGrid" unique_id=992096897 instance=ExtResource("3_h2yge")]
+position = Vector2(1119, 625)
+scale = Vector2(4.7, 4.7)
