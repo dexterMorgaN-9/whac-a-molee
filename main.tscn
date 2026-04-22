@@ -88,11 +88,11 @@ offset_bottom = 40.0
 [node name="HoleGrid" type="Node2D" parent="." unique_id=1051887330]
 
 [node name="Hole1" parent="HoleGrid" unique_id=488924429 instance=ExtResource("3_h2yge")]
-position = Vector2(80, 400)
+position = Vector2(79.99999, 423)
 scale = Vector2(4.7, 4.7)
 
 [node name="Hole2" parent="HoleGrid" unique_id=1223103978 instance=ExtResource("3_h2yge")]
-position = Vector2(325, 475)
+position = Vector2(325, 495)
 scale = Vector2(4.7, 4.7)
 
 [node name="Hole3" parent="HoleGrid" unique_id=743754597 instance=ExtResource("3_h2yge")]
@@ -108,17 +108,17 @@ position = Vector2(136, 608)
 scale = Vector2(4.7, 4.7)
 
 [node name="Hole6" parent="HoleGrid" unique_id=728782882 instance=ExtResource("3_h2yge")]
-position = Vector2(808.99994, 400)
+position = Vector2(768, 444)
 scale = Vector2(4.7, 4.7)
 
 [node name="Hole7" parent="HoleGrid" unique_id=1680332066 instance=ExtResource("3_h2yge")]
-position = Vector2(1194, 431.99997)
+position = Vector2(1146, 422.99997)
 scale = Vector2(4.7, 4.7)
 
 [node name="Hole8" parent="HoleGrid" unique_id=769356527 instance=ExtResource("3_h2yge")]
-position = Vector2(861, 625)
+position = Vector2(937, 557)
 scale = Vector2(4.7, 4.7)
 
 [node name="Hole9" parent="HoleGrid" unique_id=992096897 instance=ExtResource("3_h2yge")]
-position = Vector2(1119, 625)
+position = Vector2(1146, 608)
 scale = Vector2(4.7, 4.7)
