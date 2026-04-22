@@ -2,37 +2,54 @@ extends Node2D
 
 signal bunny_hit
 signal bunny_missed
-@onready var bunny_sprite = $BunnyArea/BunnySprite
-@onready var bunny_area = $BunnyArea
-@onready var hide_timer = $HideTimer
 
-var is_active = false
+@export var bunny_texture_1: Texture2D = preload("res://assets/1.png")
+@export var bunny_texture_2: Texture2D = preload("res://assets/2.png")
 
-func _ready():
-	bunny_area.input_event.connect(_on_bunny_clicked)
-	hide_timer.timeout.connect(_on_hide_timer_timeout)
+@onready var bunny_sprite: Sprite2D = $BunnyArea/BunnySprite
+@onready var hide_timer: Timer = $HideTimer
 
-	bunny_sprite.visible = false
-	is_active = false
+var _active := false
+var _current_points := 3
+
 func pop_up():
-	if is_active:
-		return 
-	
-	bunny_sprite.visible = true
-	is_active = true
-	hide_timer.start()  
+	_active = true
 
+	# Randomly pick one of the two ninja bunnies
+	if randi() % 2 == 0:
+		bunny_sprite.texture = bunny_texture_1
+		_current_points = 3
+	else:
+		bunny_sprite.texture = bunny_texture_2
+		_current_points = 3
+
+	bunny_sprite.visible = true
+	bunny_sprite.scale = Vector2(0.5, 0.5)
+
+	var tween = create_tween()
+	tween.tween_property(bunny_sprite, "scale", Vector2(1.0, 1.0), 0.2) \
+		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+	hide_timer.wait_time = randf_range(1.5, 3.0)
+	hide_timer.start()
 
 func hide_bunny():
-	bunny_sprite.visible = false
-	is_active = false
+	_active = false
 	hide_timer.stop()
-func _on_bunny_clicked(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if is_active:
-			bunny_hit.emit()  
+
+	var tween = create_tween()
+	tween.tween_property(bunny_sprite, "scale", Vector2(0.0, 0.0), 0.15) \
+		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_callback(func(): bunny_sprite.visible = false)
+
+func _on_bunny_area_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed and _active:
+			_active = false
+			bunny_hit.emit()
 			hide_bunny()
+
 func _on_hide_timer_timeout():
-	if is_active:
-		bunny_missed.emit() 
-		hide_bunny()
+	if _active:
+		bunny_missed.emit()
+	hide_bunny()
