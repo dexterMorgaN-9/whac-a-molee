@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bapbd8i212boy" path="res://hole.gd" id="1_ln22a"]
 [ext_resource type="Texture2D" uid="uid://b2ggiar8v5obp" path="res://assets/hole.png" id="2_cki6r"]
+[ext_resource type="Texture2D" uid="uid://da8ujan0pn17u" path="res://assets/1-removebg-preview.png" id="3_cki6r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4igv2"]
 radius = 16.0
@@ -17,7 +18,10 @@ texture = ExtResource("2_cki6r")
 [node name="BunnyArea" type="Area2D" parent="." unique_id=966508216]
 
 [node name="BunnySprite" type="Sprite2D" parent="BunnyArea" unique_id=1722159661]
-region_enabled = true
+position = Vector2(1.4019783, 1.2617784)
+rotation = -0.0012236685
+scale = Vector2(0.08124721, 0.08276393)
+texture = ExtResource("3_cki6r")
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BunnyArea" unique_id=1003017088]

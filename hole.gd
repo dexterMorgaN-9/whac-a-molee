@@ -3,26 +3,16 @@ extends Node2D
 signal bunny_hit
 signal bunny_missed
 
-@export var bunny_texture_1: Texture2D = preload("res://assets/1.png")
-@export var bunny_texture_2: Texture2D = preload("res://assets/2.png")
+@export var bunny_texture: Texture2D = preload("res://assets/1.png")
 
 @onready var bunny_sprite: Sprite2D = $BunnyArea/BunnySprite
 @onready var hide_timer: Timer = $HideTimer
 
 var _active := false
-var _current_points := 3
 
 func pop_up():
 	_active = true
-
-	# Randomly pick one of the two ninja bunnies
-	if randi() % 2 == 0:
-		bunny_sprite.texture = bunny_texture_1
-		_current_points = 3
-	else:
-		bunny_sprite.texture = bunny_texture_2
-		_current_points = 3
-
+	bunny_sprite.texture = bunny_texture
 	bunny_sprite.visible = true
 	bunny_sprite.scale = Vector2(0.5, 0.5)
 
