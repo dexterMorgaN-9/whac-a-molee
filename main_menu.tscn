@@ -81,3 +81,75 @@ offset_right = 500.0
 offset_bottom = 460.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Vbox" type="VBoxContainer" parent="UI/PanelContainer" unique_id=1199432073]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TopRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox" unique_id=1582403189]
+layout_mode = 2
+
+[node name="SettingsTitle" type="Label" parent="UI/PanelContainer/Vbox/TopRow" unique_id=1768488423]
+layout_mode = 2
+
+[node name="CloseButton" type="Label" parent="UI/PanelContainer/Vbox/TopRow" unique_id=335257562]
+layout_mode = 2
+
+[node name="Separator" type="HSeparator" parent="UI/PanelContainer/Vbox" unique_id=1654190697]
+layout_mode = 2
+
+[node name="LanguageSection" type="VBoxContainer" parent="UI/PanelContainer/Vbox" unique_id=1931452433]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/LanguageSection" unique_id=556210993]
+layout_mode = 2
+
+[node name="LanguageOption" type="OptionButton" parent="UI/PanelContainer/Vbox/LanguageSection" unique_id=979752908]
+layout_mode = 2
+
+[node name="Separator2" type="HSeparator" parent="UI/PanelContainer/Vbox" unique_id=1886032731]
+layout_mode = 2
+
+[node name="SoundSection" type="VBoxContainer" parent="UI/PanelContainer/Vbox" unique_id=529183958]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=2105252846]
+layout_mode = 2
+
+[node name="MusicRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=1124769144]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/MusicRow" unique_id=786028604]
+layout_mode = 2
+
+[node name="MusicSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/MusicRow" unique_id=1838697862]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="SFXRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=1629857304]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/SFXRow" unique_id=1935201966]
+layout_mode = 2
+
+[node name="SFXSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/SFXRow" unique_id=1201399530]
+layout_mode = 2
+
+[node name="HitRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=560392244]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/HitRow" unique_id=831806604]
+layout_mode = 2
+
+[node name="HitSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/HitRow" unique_id=1283489112]
+layout_mode = 2
+
+[node name="GameOverRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=1211046895]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/GameOverRow" unique_id=785456535]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/GameOverRow" unique_id=2047177643]
+layout_mode = 2
