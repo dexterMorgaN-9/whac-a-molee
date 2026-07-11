@@ -7,24 +7,31 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4igv2"]
 radius = 16.0
 
-[node name="Hole" type="Node2D" unique_id=488924429]
+[node name="Hole" type="Node2D"]
 script = ExtResource("1_ln22a")
 
-[node name="HoleSprite" type="Sprite2D" parent="." unique_id=230626252]
+[node name="HoleSprite" type="Sprite2D" parent="."]
 position = Vector2(1.3749986, 2.3841858e-07)
 scale = Vector2(0.37121215, 0.375)
 texture = ExtResource("2_cki6r")
 
-[node name="BunnyArea" type="Area2D" parent="." unique_id=966508216]
+[node name="BunnyArea" type="Area2D" parent="."]
+z_index = 3
 
-[node name="BunnySprite" type="Sprite2D" parent="BunnyArea" unique_id=1722159661]
-position = Vector2(1.4019783, 1.2617784)
+[node name="BunnySprite" type="Sprite2D" parent="BunnyArea"]
+position = Vector2(0.89186484, 1.3080634)
 rotation = -0.0012236685
-scale = Vector2(0.08124721, 0.08276393)
+scale = Vector2(0.0779858, 0.080447674)
 texture = ExtResource("3_cki6r")
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BunnyArea" unique_id=1003017088]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunnyArea"]
 shape = SubResource("CircleShape2D_4igv2")
 
-[node name="HideTimer" type="Timer" parent="." unique_id=360440091]
+[node name="HideTimer" type="Timer" parent="."]
+
+[node name="GroundCover" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1.3749986, 2.3841858e-07)
+scale = Vector2(0.37121215, 0.375)
+texture = ExtResource("2_cki6r")

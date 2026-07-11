@@ -1,155 +1,659 @@
 [gd_scene format=3 uid="uid://di86p2oo7ntnv"]
 
 [ext_resource type="Script" uid="uid://dfqvsktk4x50u" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://bfbewqu2kayxw" path="res://assets/backgroundColorGrass.png" id="2_bgtex"]
+[ext_resource type="PackedScene" uid="uid://b6qq2rv4r50sn" path="res://hole.tscn" id="3_holes"]
+[ext_resource type="FontFile" uid="uid://bdgkboniynclb" path="res://fonts/Bungee-Regular.ttf" id="4_bungee"]
+[ext_resource type="FontFile" uid="uid://bhcstrg3eou5v" path="res://fonts/Baloo2[wght].ttf" id="5_baloo"]
 
-[node name="Node2D" type="Node2D" unique_id=1104873789]
+[sub_resource type="FontVariation" id="FontVariation_baloo_bold"]
+base_font = ExtResource("5_baloo")
+variation_opentype = {
+"wght": 700
+}
+
+[sub_resource type="FontVariation" id="FontVariation_baloo_semibold"]
+base_font = ExtResource("5_baloo")
+variation_opentype = {
+"wght": 600
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_small_normal"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.643137, 0.388235, 0.184314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.392157, 0.219608, 0.0784314, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 3
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_small_pressed"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.482353, 0.282353, 0.121569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.301961, 0.156863, 0.0470588, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_small_hover"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.764706, 0.482353, 0.231373, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.470588, 0.270588, 0.0980392, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.18, 0.1, 0.055, 0.88)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.78, 0.5, 0.19, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 20
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_play_normal"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.91, 0.627, 0.125, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.478, 0.251, 0.027, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_play_pressed"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.7, 0.44, 0.07, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3, 0.15, 0.02, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_play_hover"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 0.718, 0.2, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.478, 0.251, 0.027, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 12
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_exit_normal"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.361, 0.227, 0.118, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.22, 0.12, 0.05, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 4
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_exit_pressed"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.243, 0.141, 0.067, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.15, 0.08, 0.02, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_exit_hover"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.478, 0.306, 0.165, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.22, 0.12, 0.05, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 28.0
+content_margin_top = 24.0
+content_margin_right = 28.0
+content_margin_bottom = 24.0
+bg_color = Color(0.227451, 0.156863, 0.0941176, 0.95)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.643137, 0.388235, 0.184314, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_close"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.752941, 0.219608, 0.219608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.470588, 0.117647, 0.117647, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_close_hover"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.890196, 0.298039, 0.298039, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.470588, 0.117647, 0.117647, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="FontVariation" id="FontVariation_baloo_reg"]
+base_font = ExtResource("5_baloo")
+variation_opentype = {
+"wght": 400
+}
+
+[node name="MainMenu" type="Node" unique_id=1413601900]
 script = ExtResource("1_06t4h")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1956933447]
+[node name="Background" type="TextureRect" parent="." unique_id=1011705594]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_bgtex")
+expand_mode = 1
+stretch_mode = 6
 
-[node name="AudioPlayers" type="Node" parent="." unique_id=1270613661]
+[node name="DecorHoles" type="Node2D" parent="." unique_id=5943164]
 
-[node name="music" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=351790370]
+[node name="Hole1" parent="DecorHoles" unique_id=1899458341 instance=ExtResource("3_holes")]
+position = Vector2(140, 580)
+scale = Vector2(3.2, 3.2)
 
-[node name="sfx" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=498266769]
+[node name="Hole2" parent="DecorHoles" unique_id=1942718983 instance=ExtResource("3_holes")]
+position = Vector2(576, 620)
+scale = Vector2(3.2, 3.2)
 
-[node name="hit sound" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=211882187]
+[node name="Hole3" parent="DecorHoles" unique_id=1525354358 instance=ExtResource("3_holes")]
+position = Vector2(1010, 580)
+scale = Vector2(3.2, 3.2)
 
-[node name="game over" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=407518754]
+[node name="DecorSpawnTimer" type="Timer" parent="." unique_id=430847857]
+wait_time = 1.5
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1164416997]
+[node name="AudioPlayers" type="Node" parent="." unique_id=177566870]
 
-[node name="TitleLabel" type="Label" parent="UI" unique_id=839537093]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 79.0
-offset_bottom = 23.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=874427702]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=223605392]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=812964031]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1459817106]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=753678815]
+
+[node name="TopBar" type="MarginContainer" parent="UI" unique_id=842045950]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
 grow_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="CenterContainer" type="CenterContainer" parent="UI" unique_id=590298509]
+[node name="TopBarHBox" type="HBoxContainer" parent="UI/TopBar" unique_id=1885435099]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HighScoreLabel" type="Label" parent="UI/TopBar/TopBarHBox" unique_id=841047000]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.949, 0.663, 0.231, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
+theme_override_font_sizes/font_size = 28
+text = "Best: 0"
+
+[node name="InfoButton" type="Button" parent="UI/TopBar/TopBarHBox" unique_id=318264789]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_semibold")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_small_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_small_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_small_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_small_hover")
+text = "INFO"
+
+[node name="SettingsButton" type="Button" parent="UI/TopBar/TopBarHBox" unique_id=1579307728]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_semibold")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_small_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_small_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_small_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_small_hover")
+text = "SET"
+
+[node name="CenterLayout" type="VBoxContainer" parent="UI" unique_id=1675220388]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="VBox" type="VBoxContainer" parent="UI/CenterContainer" unique_id=219426982]
+[node name="TitleBlock" type="VBoxContainer" parent="UI/CenterLayout" unique_id=1294054905]
 layout_mode = 2
-theme_override_constants/separation = 20
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
 
-[node name="StartButton" type="Button" parent="UI/CenterContainer/VBox" unique_id=540025048]
+[node name="TitleLabel" type="Label" parent="UI/CenterLayout/TitleBlock" unique_id=695642771]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.949, 0.663, 0.231, 1)
+theme_override_colors/font_outline_color = Color(0.1412, 0.0784, 0.0275, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_bungee")
+theme_override_font_sizes/font_size = 76
+text = "WHAC-A-MOLE"
+horizontal_alignment = 1
+
+[node name="Spacer1" type="Control" parent="UI/CenterLayout" unique_id=1715680255]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 
-[node name="ExitButton" type="Button" parent="UI/CenterContainer/VBox" unique_id=2022598897]
+[node name="ButtonCard" type="PanelContainer" parent="UI/CenterLayout" unique_id=1583728243]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+
+[node name="CardMargin" type="MarginContainer" parent="UI/CenterLayout/ButtonCard" unique_id=1271179291]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="CardVBox" type="VBoxContainer" parent="UI/CenterLayout/ButtonCard/CardMargin" unique_id=1082917640]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="UI/CenterLayout/ButtonCard/CardMargin/CardVBox" unique_id=351693473]
+custom_minimum_size = Vector2(260, 72)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_play_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_play_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_play_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_play_hover")
+text = "PLAY"
+
+[node name="ExitButton" type="Button" parent="UI/CenterLayout/ButtonCard/CardMargin/CardVBox" unique_id=1093391497]
+custom_minimum_size = Vector2(260, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.831, 0.725, 0.592, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_semibold")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_exit_normal")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_exit_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_exit_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn_exit_hover")
+text = "EXIT"
+
+[node name="Spacer2" type="Control" parent="UI/CenterLayout" unique_id=1035488728]
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 
-[node name="BottomRight" type="HBoxContainer" parent="UI" unique_id=359765622]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+[node name="DimOverlay" type="ColorRect" parent="UI" unique_id=2127185379]
+visible = false
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/separation = 12
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
 
-[node name="InfoButton" type="Button" parent="UI/BottomRight" unique_id=259395126]
-layout_mode = 2
-
-[node name="SettingsButton" type="Button" parent="UI/BottomRight" unique_id=1450295495]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=596058742]
+[node name="InfoPanel" type="PanelContainer" parent="UI" unique_id=2038065681]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 500.0
-offset_bottom = 460.0
+offset_left = -240.0
+offset_top = -220.0
+offset_right = 240.0
+offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
 
-[node name="Vbox" type="VBoxContainer" parent="UI/PanelContainer" unique_id=1199432073]
+[node name="VBox" type="VBoxContainer" parent="UI/InfoPanel" unique_id=1175684295]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TopRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox" unique_id=1582403189]
+[node name="TopRow" type="HBoxContainer" parent="UI/InfoPanel/VBox" unique_id=1048882601]
 layout_mode = 2
 
-[node name="SettingsTitle" type="Label" parent="UI/PanelContainer/Vbox/TopRow" unique_id=1768488423]
+[node name="InfoTitle" type="Label" parent="UI/InfoPanel/VBox/TopRow" unique_id=2103706927]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
+theme_override_font_sizes/font_size = 28
+text = "WHAC-A-MOLE"
+
+[node name="InfoCloseButton" type="Button" parent="UI/InfoPanel/VBox/TopRow" unique_id=1374796560]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_close")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_close_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_close_hover")
+text = "X"
+
+[node name="InfoSeparator" type="HSeparator" parent="UI/InfoPanel/VBox" unique_id=1626626115]
 layout_mode = 2
 
-[node name="CloseButton" type="Label" parent="UI/PanelContainer/Vbox/TopRow" unique_id=335257562]
+[node name="InfoBody" type="Label" parent="UI/InfoPanel/VBox" unique_id=266051177]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+theme_override_font_sizes/font_size = 18
+text = "Bunnies pop out of the holes one at a time — whack them before they duck back down!
+
++3 points per hit.
++10 points once your streak hits 5.
+Miss a bunny and your streak resets.
+
+CONTROLS
+Left Click / Tap — Whack a bunny
+
+You have 60 seconds. Beat your best score!"
+autowrap_mode = 3
+
+[node name="SettingsPanel" type="PanelContainer" parent="UI" unique_id=1446273791]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -280.0
+offset_right = 220.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="UI/SettingsPanel" unique_id=329382965]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TopRow" type="HBoxContainer" parent="UI/SettingsPanel/VBox" unique_id=1124583063]
 layout_mode = 2
 
-[node name="Separator" type="HSeparator" parent="UI/PanelContainer/Vbox" unique_id=1654190697]
+[node name="SettingsTitle" type="Label" parent="UI/SettingsPanel/VBox/TopRow" unique_id=1121605932]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
+theme_override_font_sizes/font_size = 28
+text = "SETTINGS"
+
+[node name="CloseButton" type="Button" parent="UI/SettingsPanel/VBox/TopRow" unique_id=1718073556]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_close")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_close_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_close_hover")
+text = "X"
+
+[node name="Separator" type="HSeparator" parent="UI/SettingsPanel/VBox" unique_id=840007158]
 layout_mode = 2
 
-[node name="LanguageSection" type="VBoxContainer" parent="UI/PanelContainer/Vbox" unique_id=1931452433]
+[node name="LanguageSection" type="VBoxContainer" parent="UI/SettingsPanel/VBox" unique_id=668225230]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/LanguageSection" unique_id=1397376107]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_semibold")
+text = "Language"
+
+[node name="LanguageOption" type="OptionButton" parent="UI/SettingsPanel/VBox/LanguageSection" unique_id=941658930]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+
+[node name="Separator2" type="HSeparator" parent="UI/SettingsPanel/VBox" unique_id=1549731380]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/LanguageSection" unique_id=556210993]
+[node name="SoundSection" type="VBoxContainer" parent="UI/SettingsPanel/VBox" unique_id=1827240500]
 layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="LanguageOption" type="OptionButton" parent="UI/PanelContainer/Vbox/LanguageSection" unique_id=979752908]
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/SoundSection" unique_id=1639229513]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_semibold")
+text = "Sound"
 
-[node name="Separator2" type="HSeparator" parent="UI/PanelContainer/Vbox" unique_id=1886032731]
+[node name="MasterRow" type="HBoxContainer" parent="UI/SettingsPanel/VBox/SoundSection" unique_id=266001562]
 layout_mode = 2
+theme_override_constants/separation = 12
 
-[node name="SoundSection" type="VBoxContainer" parent="UI/PanelContainer/Vbox" unique_id=529183958]
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/SoundSection/MasterRow" unique_id=780530421]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+text = "Master"
 
-[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=2105252846]
+[node name="MasterSlider" type="HSlider" parent="UI/SettingsPanel/VBox/SoundSection/MasterRow" unique_id=2069490709]
 layout_mode = 2
-
-[node name="MusicRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=1124769144]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/MusicRow" unique_id=786028604]
-layout_mode = 2
-
-[node name="MusicSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/MusicRow" unique_id=1838697862]
-layout_mode = 2
+size_flags_horizontal = 3
 max_value = 1.0
 step = 0.01
 
-[node name="SFXRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=1629857304]
+[node name="MusicRow" type="HBoxContainer" parent="UI/SettingsPanel/VBox/SoundSection" unique_id=1067764209]
 layout_mode = 2
+theme_override_constants/separation = 12
 
-[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/SFXRow" unique_id=1935201966]
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/SoundSection/MusicRow" unique_id=704916618]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+text = "Music"
 
-[node name="SFXSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/SFXRow" unique_id=1201399530]
+[node name="MusicSlider" type="HSlider" parent="UI/SettingsPanel/VBox/SoundSection/MusicRow" unique_id=1744579001]
 layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
 
-[node name="HitRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=560392244]
+[node name="MusicToggle" type="CheckButton" parent="UI/SettingsPanel/VBox/SoundSection/MusicRow" unique_id=309240552]
 layout_mode = 2
+button_pressed = true
+text = "On"
 
-[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/HitRow" unique_id=831806604]
+[node name="SFXRow" type="HBoxContainer" parent="UI/SettingsPanel/VBox/SoundSection" unique_id=1792154225]
 layout_mode = 2
+theme_override_constants/separation = 12
 
-[node name="HitSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/HitRow" unique_id=1283489112]
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/SoundSection/SFXRow" unique_id=698220091]
+custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+text = "SFX"
 
-[node name="GameOverRow" type="HBoxContainer" parent="UI/PanelContainer/Vbox/SoundSection" unique_id=1211046895]
+[node name="SFXSlider" type="HSlider" parent="UI/SettingsPanel/VBox/SoundSection/SFXRow" unique_id=1300902880]
 layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
 
-[node name="Label" type="Label" parent="UI/PanelContainer/Vbox/SoundSection/GameOverRow" unique_id=785456535]
+[node name="SFXToggle" type="CheckButton" parent="UI/SettingsPanel/VBox/SoundSection/SFXRow" unique_id=183752983]
 layout_mode = 2
+button_pressed = true
+text = "On"
 
-[node name="HSlider" type="HSlider" parent="UI/PanelContainer/Vbox/SoundSection/GameOverRow" unique_id=2047177643]
+[node name="HitRow" type="HBoxContainer" parent="UI/SettingsPanel/VBox/SoundSection" unique_id=1943519323]
 layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/SoundSection/HitRow" unique_id=487849373]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+text = "Hit Sound"
+
+[node name="HitSlider" type="HSlider" parent="UI/SettingsPanel/VBox/SoundSection/HitRow" unique_id=47621776]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="GameOverRow" type="HBoxContainer" parent="UI/SettingsPanel/VBox/SoundSection" unique_id=1794066869]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="UI/SettingsPanel/VBox/SoundSection/GameOverRow" unique_id=260474059]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.8, 1)
+theme_override_fonts/font = SubResource("FontVariation_baloo_reg")
+text = "Game Over"
+
+[node name="GameOverSlider" type="HSlider" parent="UI/SettingsPanel/VBox/SoundSection/GameOverRow" unique_id=410597189]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="FadeOverlay" type="ColorRect" parent="UI" unique_id=1097287910]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
