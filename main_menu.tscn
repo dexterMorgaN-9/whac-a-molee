@@ -6,12 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bdgkboniynclb" path="res://fonts/Bungee-Regular.ttf" id="4_bungee"]
 [ext_resource type="FontFile" uid="uid://bhcstrg3eou5v" path="res://fonts/Baloo2[wght].ttf" id="5_baloo"]
 
-[sub_resource type="FontVariation" id="FontVariation_baloo_bold"]
-base_font = ExtResource("5_baloo")
-variation_opentype = {
-"wght": 700
-}
-
 [sub_resource type="FontVariation" id="FontVariation_baloo_semibold"]
 base_font = ExtResource("5_baloo")
 variation_opentype = {
@@ -87,6 +81,12 @@ corner_radius_bottom_left = 28
 shadow_color = Color(0, 0, 0, 0.45)
 shadow_size = 20
 shadow_offset = Vector2(0, 6)
+
+[sub_resource type="FontVariation" id="FontVariation_baloo_bold"]
+base_font = ExtResource("5_baloo")
+variation_opentype = {
+"wght": 700
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_play_normal"]
 content_margin_left = 32.0
@@ -304,14 +304,6 @@ theme_override_constants/margin_bottom = 16
 [node name="TopBarHBox" type="HBoxContainer" parent="UI/TopBar" unique_id=1885435099]
 layout_mode = 2
 theme_override_constants/separation = 16
-
-[node name="HighScoreLabel" type="Label" parent="UI/TopBar/TopBarHBox" unique_id=841047000]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.949, 0.663, 0.231, 1)
-theme_override_fonts/font = SubResource("FontVariation_baloo_bold")
-theme_override_font_sizes/font_size = 28
-text = "Best: 0"
 
 [node name="InfoButton" type="Button" parent="UI/TopBar/TopBarHBox" unique_id=318264789]
 custom_minimum_size = Vector2(48, 48)
