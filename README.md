@@ -1,16 +1,6 @@
 # Whac-A-Mole
 
-A small Whac-A-Mole game I made in **Godot** while learning game development.
-
-Click the moles as fast as you can before the timer runs out. The game saves your highest score locally, so there's always a score to beat.
-
-## Features
-
-- 60-second game rounds
-- High score saving
-- Random mole spawning
-- Simple main menu
-- Quick restart
+A fast-paced arcade game inspired by the classic Whac-A-Mole. Test your reflexes, smash as many moles as possible before time runs out, and beat your highest score.
 
 ## Controls
 
