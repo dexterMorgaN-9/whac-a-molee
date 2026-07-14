@@ -30,7 +30,7 @@ extends Node
 const GAME_SCENE = "res://main.tscn"
 const SAVE_PATH := 'user://settings.cfg'
 const FADE_TIME = 0.4
-const MIN_VOL = 0.0001 # avoid -inf db
+const MIN_VOL = 0.0001 
 
 func _ready():
 	loadsettings()
@@ -160,7 +160,6 @@ func loadsettings():
 	musictoggle.button_pressed = cfg.get_value("audio", "music_on", true)
 	sfxtoggle.button_pressed = cfg.get_value("audio", "sfx_on", true)
 
-	# reapply so audio bus actually reflects loaded values
 	onmastervol(masterslider.value)
 	onmusicvol(musicslider.value)
 	onsfxvol(sfxSlider.value)
