@@ -20,23 +20,38 @@ extends Node
 @onready var hitslider = $UI/SettingsPanel/VBox/SoundSection/HitRow/HitSlider
 @onready var gameOverSlider = $UI/SettingsPanel/VBox/SoundSection/GameOverRow/GameOverSlider
 
-@onready var musicplayer = $AudioPlayers/AudioStreamPlayer
-@onready var sfxplayer = $AudioPlayers/AudioStreamPlayer2
-@onready var hitplayer = $AudioPlayers/AudioStreamPlayer3
-@onready var gameoverplayer = $AudioPlayers/AudioStreamPlayer4
+@onready var musicplayer = $AudioPlayers/Music
+@onready var hitplayer = $AudioPlayers/Hit
+@onready var missplayer = $AudioPlayers/Miss
+@onready var gameoverplayer = $AudioPlayers/GameOver
+@onready var countdownplayer = $AudioPlayers/Countdown
+@onready var streakplayer = $AudioPlayers/Streak
+@onready var sfxplayer = $AudioPlayers/Click
 @onready var decorTimer = $DecorSpawnTimer
 @onready var decorholes = $DecorHoles
 
 const GAME_SCENE = "res://main.tscn"
 const SAVE_PATH := 'user://settings.cfg'
 const FADE_TIME = 0.4
-const MIN_VOL = 0.0001 
+const MIN_VOL = 0.0001
+
+const SND_MUSIC = preload("res://sounds/bg loop.mp3")
+const SND_HIT = preload("res://sounds/Hit Sound.mp3")
+const SND_MISS = preload("res://sounds/bunny escape.mp3")
+const SND_GAMEOVER = preload("res://sounds/game over.mp3")
+const SND_COUNTDOWN = preload("res://sounds/countdown go!.mp3")
+const SND_STREAK = preload("res://sounds/streak 5x!.mp3")
+const SND_CLICK = preload("res://sounds/UI click.mp3")
 
 func _ready():
 	loadsettings()
 	hooksignals()
 	fadein()
 	decorTimer.start()
+	musicplayer.stream = SND_MUSIC
+	if musicplayer.stream is AudioStreamMP3 or musicplayer.stream is AudioStreamOggVorbis:
+		musicplayer.stream.loop = true
+	musicplayer.play()
 
 
 func hooksignals():
@@ -56,6 +71,10 @@ func hooksignals():
 	sfxtoggle.toggled.connect(onsfxtoggle)
 	decorTimer.timeout.connect(ondecortick)
 
+func playclick():
+	sfxplayer.stream = SND_CLICK
+	sfxplayer.play()
+
 func fadein():
 	fadeoverlay.modulate.a = 1.0
 	var tw = create_tween()
@@ -69,27 +88,33 @@ func fadeoutthen(cb):
 
 
 func onstart():
+	playclick()
 	startbtn.disabled = true
 	fadeoutthen(func(): get_tree().change_scene_to_file(GAME_SCENE))
 
 func onexit():
+	playclick()
 	fadeoutthen(func():
 		get_tree().quit()
 	)
 
 func onsettingsbtn():
+	playclick()
 	dimoverlay.visible = true
 	settingsPanel.visible = true
 func oninfobtn():
+	playclick()
 	dimoverlay.visible = true
 	infopanel.visible = true
 
 func closesettings():
+	playclick()
 	settingsPanel.visible = false
 	dimoverlay.visible = false
 	savesettings()
 
 func closeinfo():
+	playclick()
 	infopanel.visible = false
 	dimoverlay.visible = false
 
@@ -103,15 +128,22 @@ func ondimclick(e):
 
 func onmastervol(v):
 	var busIdx = AudioServer.get_bus_index("Master")
+	if busIdx == -1:
+		return
 	AudioServer.set_bus_volume_db(busIdx, linear_to_db(max(v, MIN_VOL)))
 
 func onmusicvol(val: float):
 	var idx = AudioServer.get_bus_index("Music")
+	if idx == -1:
+		return
 	AudioServer.set_bus_volume_db(idx, linear_to_db(max(val, MIN_VOL)))
 
 func onsfxvol(v):
 	var i = AudioServer.get_bus_index("SFX")
+	if i == -1:
+		return
 	AudioServer.set_bus_volume_db(i, linear_to_db(max(v, MIN_VOL)))
+
 func onhitvol(v):
 	hitplayer.volume_db = linear_to_db(max(v, MIN_VOL))
 
@@ -120,11 +152,17 @@ func ongameovervol(v):
 
 
 func onmusictoggle(on):
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), not on)
+	var idx = AudioServer.get_bus_index("Music")
+	if idx == -1:
+		return
+	AudioServer.set_bus_mute(idx, not on)
 	musicslider.editable = on
 
 func onsfxtoggle(isOn):
-	AudioServer.set_bus_mute(AudioServer.get_bus_index('SFX'), !isOn)
+	var idx = AudioServer.get_bus_index("SFX")
+	if idx == -1:
+		return
+	AudioServer.set_bus_mute(idx, !isOn)
 	sfxSlider.editable = isOn
 
 

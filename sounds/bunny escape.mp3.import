@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bru32sbj2q5xd"
+path="res://.godot/imported/bunny escape.mp3-c10edded9cff5c7477d1a844e876f0a4.mp3str"
+
+[deps]
+
+source_file="res://sounds/bunny escape.mp3"
+dest_files=["res://.godot/imported/bunny escape.mp3-c10edded9cff5c7477d1a844e876f0a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
