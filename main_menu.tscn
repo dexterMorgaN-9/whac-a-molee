@@ -281,13 +281,19 @@ wait_time = 1.5
 
 [node name="AudioPlayers" type="Node" parent="." unique_id=177566870]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=874427702]
+[node name="Music" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=874427702]
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=223605392]
+[node name="Hit" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=223605392]
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=812964031]
+[node name="Miss" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=812964031]
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1459817106]
+[node name="GameOver" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1459817106]
+
+[node name="Countdown" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=894730157]
+
+[node name="Streak" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1138667759]
+
+[node name="Click" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1309617392]
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=753678815]
 
