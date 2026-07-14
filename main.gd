@@ -1,14 +1,12 @@
 extends Node2D
 
 var score = 0
-var hiscore = 0
 var streak = 0
 var tleft = 60.0
 var running = false
 var lastSec = -1
 
 @onready var scoreLbl = $UI/ScoreLabel
-@onready var hiLbl = $UI/HighScoreLabel
 @onready var timerLbl = $UI/TimerLabel
 @onready var streakLbl = $UI/StreakLabel
 @onready var gTimer = $GameTimer
@@ -34,21 +32,6 @@ func spawndelay() -> float:
 	return randf_range(minD, maxD)
 
 
-func savehi(hs):
-	var f = FileAccess.open("user://highscore.save", FileAccess.WRITE)
-	if f:
-		f.store_var(hs)
-		f.close()
-
-func loadhi():
-	if not FileAccess.file_exists('user://highscore.save'):
-		return 0
-	var f = FileAccess.open('user://highscore.save', FileAccess.READ)
-	if not f:
-		return 0
-	var hs = f.get_var()
-	f.close()
-	return hs
 func punchscore():
 	var tw = create_tween()
 	tw.tween_property(scoreLbl, "scale", Vector2(1.3, 1.3), 0.08)
@@ -59,8 +42,6 @@ func onhit():
 	streak += 1
 	var pts = 10 if streak >= 5 else 3
 	score += pts
-	if score > hiscore:
-		hiscore = score
 	refreshui()
 	punchscore()
 
@@ -75,7 +56,6 @@ func onmiss():
 
 func refreshui():
 	scoreLbl.text = "SCORE: " + str(score)
-	hiLbl.text = 'High Score: ' + str(hiscore)
 	timerLbl.text = "Time: " + str(int(ceil(tleft)))
 	if streak >= 5:
 		streakLbl.text = "STREAK! " + str(streak) + "x 🔥"
@@ -117,11 +97,8 @@ func ontimeout():
 	for h in holes:
 		if h.is_active:
 			h.hide_bunny()
-	if score > hiscore:
-		hiscore = score
-		savehi(hiscore)
 	await get_tree().create_timer(0.5).timeout
-	finalLbl.text = "Final Score: " + str(score) + "\nHigh Score: " + str(hiscore)
+	finalLbl.text = "Final Score: " + str(score)
 	overDim.visible = true
 	overPanel.visible = true
 
@@ -147,7 +124,6 @@ func _ready():
 	restartBtn.pressed.connect(restart)
 	homeBtn.pressed.connect(gohome)
 
-	hiscore = loadhi()
 	tleft = 60.0
 	overPanel.visible = false
 	overDim.visible = false
